@@ -15,9 +15,12 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
 
 # Functionless URL Shortener
-This app creates a URL shortener without using any compute. All business logic is handled at the Amazon API Gateway level. The basic app will create an API Gateway instance utilizing Cognito for authentication and authorization. It will also create an Amazon DynamoDB table for data storage. It will also create a simple Vuejs application as a demo client.
 
-Read the blog series about this application:
+> This repository is a minimal verison for the URL shortener taken from https://github.com/aws-samples/amazon-api-gateway-url-shortener. Only the API gateway and DDB were kept in this repository, all other resources have been removed. 
+
+This app creates a URL shortener without using any compute. All business logic is handled at the Amazon API Gateway level. The basic app will create an API Gateway instance and Amazon DynamoDB table for data storage.
+
+Read the blog series from AWS about this application:
 1. [Building a serverless URL shortener app without AWS Lambda – part 1](https://aws.amazon.com/blogs/compute/building-a-serverless-url-shortener-app-without-lambda-part-1)
 1. [Building a serverless URL shortener app without AWS Lambda – part 2](https://aws.amazon.com/blogs/compute/building-a-serverless-url-shortener-app-without-lambda-part-2)
 1. [Building a serverless URL shortener app without AWS Lambda – part 3](https://aws.amazon.com/blogs/compute/building-a-serverless-url-shortener-app-without-lambda-part-3)
@@ -26,12 +29,7 @@ Read the blog series about this application:
 
 ### Services Used
 * <a href="https://aws.amazon.com/api-gateway/" target="_blank">Amazon API Gateway</a>
-* <a href="https://aws.amazon.com/cognito/" target="_blank">Amazon Cognito</a>
-* <a href="https://aws.amazon.com/dynamodb/" target="_bank">Amazon DynamoDB</a>
-* <a href="https://aws.amazon.com/amplify/console/" target="_blank">AWS Amplify Console</a>
-* <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon CloudFront</a> *Will cause a lengthy deployment time. See note under **Deploying**
-* <a href="https://aws.amazon.com/s3/" target="_blank">Amazon S3</a>
-
+* <a href="https://aws.amazon.com/cognito/" target="_bank">Amazon DynamoDB</a>
 
 ### Requirements for deployment
 * <a href="https://aws.amazon.com/cli/" target="_blank">AWS CLI</a>
@@ -61,17 +59,8 @@ Stack Name [URLShortener]:
 ## The region you want to deploy in
 AWS Region [us-west-2]:
 
-## The name of the application (lowercase no spaces). This must be globally unique
-Parameter AppName [shortener]:
-
-## Enables public client and local client for testing. (Less secure)
-Parameter UseLocalClient [false]:
-
-## GitHub forked repository URL
-Parameter GithubRepository []:
-
-## Github Personal access token
-Parameter PersonalAccessToken:
+## Existing Cognito User Pool 
+Arn of Cognito User Pool [CognitoUserPoolArn]:
 
 ## Shows you resources changes to be deployed and requires a 'Y' to initiate deploy
 Confirm changes before deploy [y/N]: 
